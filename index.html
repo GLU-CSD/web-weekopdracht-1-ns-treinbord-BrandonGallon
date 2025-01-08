@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekopdracht - NS-Treinbord</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/klok.js"></script>
 </head>
+
 <body>
     <div id="container">
         <div id="left">
-            <!-- hier komt de klok -->
+            <div id="klok">
+                <div id="wijzer-uur"></div>
+                <div id="wijzer-min"></div>
+                <div id="wijzer-sec">
+                    <div class="line"></div>
+                    <div class="circle"></div>
+                    <div class="line"></div>
+                </div>
+                <div id="minuten"></div>
+            </div>
         </div>
         <div id="middle">
-            <!-- Hier komt de reizigers info -->
+            <div id="tijd">1 minuut</div>
+            <div id="treinsoort">Intercity<img src="assets/img/ns_logo.png" id="nslogo"></div>
+            <div id="bestemming">Heerlen</div>
+            <div id="via">via 's-Hertogenbosch, Eindhoven,<br> Weert, Roermond en Sittard</div>
+            <div id="treinlengte"><img src="assets/img/nstrein.png" id="nstrein">
+            </div>
+            <div id="volgende">Hierna/next: 08:54 IC Venlo</div>
         </div>
         <div id="right">
-            <!-- hier komt het spoor nummer -->
+            <div id="spoor">
+                <div id="spoorblokje"></div>spoor
+                <div id="spoortekst">18</div>
+                <div id="b">b</div>
+            </div>
         </div>
-    </div>
 </body>
+
 </html>

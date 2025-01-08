@@ -1,4 +1,4 @@
-#container{
+#container {
     width: 936px;
     display: flex;
     margin: 0 auto;
@@ -6,7 +6,7 @@
     border: 2px solid #000;
 }
 
-#left{
+#left {
     width: 240px;
     background-color: #f2f2f2;
     height: 335px;
@@ -17,14 +17,257 @@
     width: 568px;
     height: 339px;
     background-color: rgb(0, 0, 106);
+    color: rgb(0, 0, 106);
+    font-size: 30px;
+    font-weight: bold;
     padding: 35px;
     box-sizing: border-box;
     border: 2px solid #000;
+    display: grid;
+    grid-template-areas: "tijd treinsoort"
+        "bestemming bestemming"
+        "via via"
+        "treinlengte treinlengte"
+        "volgende volgende";
 }
 
-#right{
-    width:128px;
+#right {
+    width: 128px;
     height: 335px;
     background-color: rgb(0, 0, 106);
     border: 2px solid #000;
+    color: rgb(0, 0, 106);
+    font-weight: bold;
 }
+
+#nslogo {
+    width: 90px;
+    height: 40px;
+    float: right;
+    margin-top: 2px;
+    margin-right: 2px;
+}
+
+#tijd {
+    background-color: rgb(255, 255, 255);
+    grid-area: tijd;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 106);
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+#treinsoort {
+    background-color: rgb(255, 255, 255);
+    grid-area: treinsoort;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(0, 0, 106);
+    text-align: right;
+}
+
+#bestemming {
+    background-color: rgb(255, 255, 255);
+    grid-area: bestemming;
+    padding-left: 10px;
+}
+
+#via {
+    background-color: rgb(255, 255, 255);
+    grid-area: via;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+#treinlengte {
+    background-color: rgb(255, 255, 255);
+    grid-area: treinlengte;
+    padding-top: 20px;
+    padding-left: 100px;
+}
+
+#volgende {
+    width: 480px;
+    height: 25px;
+    background-color: rgb(0, 0, 106);
+    grid-area: volgende;
+    color: rgb(255, 255, 255);
+    border: 2px solid black;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+#spoor {
+    background-color: rgb(255, 255, 255);
+    width: 96px;
+    height: 96px;
+    margin-left: 16px;
+    margin-top: 40px;
+    margin-right: 16px;
+    float: right;
+}
+
+#spoorblokje {
+    background-color: rgb(0, 0, 106);
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+
+#spoortekst {
+    font-size: 48px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+#b {
+    height: 30px;
+    font-size: 30px;
+    /* line-height: 40px; */
+    text-align: center;
+    color: rgb(0, 0, 106);
+    margin-top: -50px;
+    margin-left: 50px;
+}
+
+#nstrein {
+    margin-top: 30px;
+    margin-left: 5%;
+}
+
+#klok {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-left: 15px;
+    margin-top: 20px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: inset 0 2px 36px rgba(0,0,0,0.3), inset 0 0 72px 72px rgba(0,0,200,0.05);
+    border: 10px solid gray;
+  
+    opacity: 0;
+    transition: all 0.2s;
+  }
+  body.loaded #klok {
+    opacity: 1;
+  }
+  
+    #wijzer-uur,
+    #wijzer-min,
+    #wijzer-sec {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      margin-left: -2.7px;
+      width: 5.4px;
+    }
+  
+    body.loaded #wijzer-uur,
+    body.loaded #wijzer-min,
+    body.loaded #wijzer-sec {
+      transition: transform 1s;
+    }
+  
+    #wijzer-uur,
+    #wijzer-min {
+      background: rgb(0, 0, 106);
+      border-radius: 0 0 2.7px 2.7px;
+    }
+  
+    #wijzer-uur,
+    #wijzer-min,
+    #wijzer-sec .line,
+    #wijzer-sec .circle {
+      box-shadow: -10px 5px 10px rgba(0,0,0,0.1);
+    }
+  
+    #wijzer-uur {
+      margin-top: -9px;
+      height: 60px;
+  
+      transform-origin: 2.7px 9px;
+    }
+  
+    #wijzer-min {
+      margin-top: -18px;
+      height: 100px;
+  
+      transform-origin: 2.7px 18px;
+    }
+  
+    #wijzer-sec {
+      margin-top: -9px;
+      height: 72px;
+  
+      transform-origin: 2.7px 9px;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+      #wijzer-sec:before {
+        content: "";
+        position: absolute;
+        top: 7.2px;
+        width: 3.6px;
+        height: 3.6px;
+        background: #990000;
+        border-radius: 3.6px;
+      }
+      #wijzer-sec .line {
+        background: #990000;
+        width: 1.8px;
+        height: 27px;
+      }
+      #wijzer-sec .line:first-child {
+        height: 36px;
+      }
+      #wijzer-sec .line:last-child {
+        height: 18px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+      }
+      #wijzer-sec .circle {
+        border: 1.8px solid #990000;
+        border-radius: 100%;
+        width: 7.2px;
+        height: 7.2px;
+      }
+  
+    #minuten {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+      #minuten .minuut {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -5.4px;
+        margin-top: -0.9px;
+        width: 10.8px;
+        height: 2.7px;
+  
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      #minuten .minuut:before {
+        content: "";
+        display: block;
+        background: #1441AD;
+        width: 1.8px;
+        height: 1.8px;
+        border-radius: 5.4px;
+      }
+      #minuten .minuut:nth-child(5n+1):before {
+        width: 10.8px;
+        height: 5.4px;
+      }
+
+      
